@@ -1,4 +1,3 @@
-// Load header content
 // Load the header content dynamically
 fetch('header.html')
     .then(response => response.text())
