@@ -8,19 +8,46 @@
     <link rel="stylesheet" href="./src/style.css">
 </head>
 <body>
-    <div id="header-placeholder"></div> <!-- Placeholder for the header -->
+    <!-- Header -->
+    <header>
+        <!-- Hamburger Menu for Mobile -->
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <!-- Logo -->
+        <img class="logo" src="./public/images/app-logo.png" alt="logo">
+
+        <!-- Navigation Menu -->
+        <nav class="nav-menu" id="navMenu">
+            <ul class="nav-links">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./faq.html">FAQs</a></li>
+                <li><a href="./resources.html">Resources</a></li>
+                <li><a href="./repository.html">Repository</a></li>
+            </ul>
+        </nav>
+
+        <!-- Call-to-Action Button -->
+        <a class="cta" href="https://warden.netlaw.com"><button>Warden</button></a>
+    </header>
 
     <!-- Main content area -->
     <div class="main-content">
         <div class="welcome-container">
-            <h1>Welcome to the Service App</h1><hr>
-            <p>Designed for NetLaw's customer care representatives, this app aims to increase effeciency by giving you the tools needed to provide excellent
+            <h1>Welcome to the Service App</h1>
+            <hr>
+            <p>
+                Designed for NetLaw's customer care representatives, this app aims to increase efficiency by giving you the tools needed to provide excellent
                 customer service. Quickly find responses to FAQs, quickstart guides, and other helpful links to make your job easier. We hope you enjoy
-                the benfits that this app brings! 
+                the benefits that this app brings!
             </p>
         </div>
     </div>
 
+    <script src="./src/header.js"></script>
     <script src="./src/index.js"></script>
 </body>
 </html>
