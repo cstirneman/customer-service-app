@@ -1,0 +1,252 @@
+/* General styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: rgb(100, 100, 100);
+}
+
+/* Container for all sections */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1.5fr 3fr; /* Two unequal columns */
+    grid-template-rows: 1fr 1fr; /* Two equal rows */
+    gap: 20px;
+    padding: 2%;
+    height: auto;
+    grid-template-areas: 
+        "products documents"
+        "advisor-codes policies"; /* Defining the grid areas */
+}
+
+.products {
+    grid-area: products;
+}
+
+.advisor-codes {
+    grid-area: advisor-codes;
+    height: 30vh; /* Set a fixed height for the Advisor Codes section */
+    overflow-y: auto; /* Allow scrolling if content exceeds the height */
+}
+
+.documents {
+    grid-area: documents;
+    height: 80vh; /* Set a fixed height for the Documents section */
+    overflow-y: auto;
+}
+
+.policies {
+    grid-area: policies;
+    height: auto; /* Allow Policies section to expand with content */
+    max-height: 30vh; /* Set a reasonable initial height */
+    overflow: hidden; /* Hidden overflow to prevent initial expansion */
+    transition: max-height 0.3s ease; /* Smooth transition for expansion */
+}
+
+.policies.expanded {
+    max-height: 50vh; /* Set the expanded height when the accordion is clicked */
+    overflow-y: scroll;
+}
+
+hr {
+    width: 100%;
+    height: 2px;
+    background-color: #06d2dd;
+    border: none;
+    margin-bottom: 1%;
+}
+
+/* Section styles */
+.products, .advisor-codes, .documents, .policies {
+    background-color: #dfdcdc;
+    border: 2px solid #0b112b;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+
+.policies a{
+    color: black;
+}
+
+/* Products section */
+.products li {
+    color: #0b112b;
+    margin-left: 20px;
+    font-size: 1rem;
+}
+
+.products p {
+    font-size: 1rem;
+}
+
+.products h4 {
+    margin-bottom: 1%;
+}
+
+.package {
+    margin-bottom: 5%;
+}
+
+/* Advisor Codes section */
+.advisor-codes input {
+    width: 100%;
+    font-size: 16pt;
+    border: 2px solid #0b112b;
+    border-radius: 5px;
+    padding-left: 5px;
+}
+
+.advisor-codes button {
+    float: right;
+    margin-top: 5%;
+}
+
+#advisor-link {
+    text-align: center;
+    margin-top: 5%;
+}
+
+/* Accordion for Documents and Policies sections */
+.accordion-btn {
+    background-color: #0b112b;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    width: 100%;
+    text-align: left;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 5px;
+}
+
+.accordion-btn:hover {
+    background-color: #06d2dd;
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    padding-left: 10px;
+    background-color: #f1f1f1;
+    border-left: 5px solid #06d2dd;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.accordion-content.active {
+    max-height: 1000px; /* Set a large enough height to allow the full content to expand */
+    transition: max-height 0.3s ease-in;
+}
+
+.accordion-content p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    color: #333;
+    padding: 10px;
+}
+
+.accordion-content li {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    color: #333;
+}
+
+#company-name {
+    text-align: center;
+    margin-top: 5%;
+    font-size: 18px;
+    font-weight: bold;
+    color: #0b112b;
+}
+
+.copy-btn, .copy-link-btn {
+    background-color: #06d2dd;
+    display: block;
+    float: right;
+    margin: 10px;
+}
+
+/* Responsive styles */
+
+/* Large screens - Desktops (min-width 1024px) */
+@media (min-width: 1100px) {
+    .grid-container {
+        grid-template-columns: 1.5fr 3fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: 
+            "products documents"
+            "advisor-codes policies"; /* Maintain this order */
+        gap: 20px;
+    }
+
+    .documents {
+        grid-area: documents;
+        height: 72vh; /* Set a fixed height for the Documents section */
+        overflow-y: auto;
+    }
+
+    .products {
+        grid-area: products;
+        height: 72vh;
+    }
+}
+
+/* Medium screens - Tablets (768px to 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .grid-container {
+        grid-template-columns: 1fr; /* One column layout */
+        grid-template-rows: auto;
+        grid-template-areas: 
+            "products"
+            "documents"
+            "advisor-codes"
+            "policies"; /* Stack in this specific order */
+        gap: 20px;
+    }
+
+    .products, .advisor-codes, .documents, .policies {
+        margin-bottom: 20px;
+        height: auto; /* Let content control height */
+    }
+}
+
+/* Small screens - Mobile phones (max-width 767px) */
+@media (max-width: 767px) {
+    .grid-container {
+        grid-template-columns: 1fr; /* Stack sections vertically */
+        grid-template-rows: auto;
+        grid-template-areas: 
+            "products"
+            "documents"
+            "advisor-codes"
+            "policies"; /* Stack vertically with this specific order */
+        gap: 15px;
+        height: auto;
+        padding: 10px;
+    }
+
+    .products, .advisor-codes, .documents, .policies {
+        height: auto; /* Let height be dictated by content */
+        margin-bottom: 15px;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    .products li, .accordion-content p {
+        font-size: 0.9rem;
+    }
+
+    .products h4, .accordion-btn {
+        font-size: 1.2rem;
+    }
+
+    .copy-btn, .copy-link-btn {
+        width: 100%; /* Full width for buttons */
+        margin: 5px auto;
+    }
+}

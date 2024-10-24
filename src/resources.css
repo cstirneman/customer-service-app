@@ -1,0 +1,116 @@
+/* General styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: rgb(100, 100, 100);
+}
+
+h1 {
+    color: white;
+    text-decoration: underline;
+    text-decoration-color: #06d2dd;
+    text-align: center;
+    font-size: 3rem;
+    margin-top: 10px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1.5fr 2fr;
+    grid-template-rows: auto;
+    gap: 20px;
+    padding: 3%;
+}
+
+.flyers-container, .advisor-guides-container, .videos-container {
+    background-color: #dfdcdc;
+    border-radius: 10px;
+    border: 2px solid #0b112b;
+}
+
+.flyers-container img, .advisor-guides-container img, .videos-container img {
+    height: 5vh;
+}
+
+.flyers-container p, .advisor-guides-container p, .videos-container p {
+    flex: 1;
+    margin-left: 1%;
+    text-align: left;
+}
+
+.flyer, .guide, .video {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 5%;
+    font-size: 1.2rem;
+}
+
+h2 {
+    text-align: center;
+    text-decoration: underline;
+    text-decoration-color: #06d2dd;
+    text-decoration-thickness: 3px;
+}
+
+.container button {
+    background-color: #0b112b;
+    border: none;
+    padding: 8px 16px;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.container button:hover {
+    background-color: #06d2dd;
+}
+
+/* Responsive styles */
+
+/* Tablets */
+@media (max-width: 1024px) {
+    .container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 10px;
+    }
+
+    .flyers-container, .advisor-guides-container, .videos-container {
+        margin-bottom: 20px;
+    }
+}
+
+/* Mobile Phones */
+@media (max-width: 767px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .flyers-container, .advisor-guides-container, .videos-container {
+        margin-bottom: 15px;
+    }
+
+    .flyer, .guide, .video {
+        font-size: 0.9rem;
+    }
+
+    .flyer p, .guide p, .video p {
+        margin-right: 10px;
+    }
+
+    .container button {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .copy-link-btn{
+        width: 50%;
+        margin-left: 20px;
+    }
+}

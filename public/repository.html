@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Service App</title>
+    <link rel="stylesheet" href="../src/header.css">
+    <link rel="stylesheet" href="../src/repository.css">
+</head>
+<body>
+    <div id="header-placeholder"></div> <!-- Placeholder for the header -->
+
+    <div class="grid-container">
+        <div class="products">
+            <h2>Products</h2><hr>
+            <div class="package">
+                <h4>NetLaw Estate Planning Package ($400)</h4>
+                <button class="copy-btn">Copy</button>
+                <p>The estate planning package costs a total of $400 and includes the following documents:</p><br>
+                <ul>
+                    <li>Last Will and Testament</li>
+                    <li>Durable Financial Power of Attorney</li>
+                    <li>Medical Healthcare Surrogate Designation</li>
+                    <li>HIPAA Authorization</li>
+                    <li>Living Will/Advanced Directive</li>
+                </ul>
+            </div>
+            <div class="package">
+                <h4>NetLaw Living Trust Upgrade Package ($600)</h4>
+                <button class="copy-btn">Copy</button>
+                <p>The Living Trust Upgrade package costs a total of $600 and includes the following documents:</p><br>
+                <ul>
+                    <li>Revocable Livng Trust</li>
+                    <li>Pet Trust</li>
+                    <li>Last Will and Testament</li>
+                    <li>Durable Financial Power of Attorney</li>
+                    <li>Medical Healthcare Surrogate Designation</li>
+                    <li>HIPAA Authorization</li>
+                    <li>Living Will/Advanced Directive</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="advisor-codes">
+            <h2>Advisor Codes</h2><hr>
+            <input type="text" id="search-input" placeholder="Search for a company">
+            <button class="copy-link-btn">Copy Link</button>
+            <h2 id="advisor-link">i.netlaw.com/</h2>
+            <p id="company-name"></p>
+        </div>
+
+        <div class="documents">
+            <h2>Documents</h2><hr>
+            <button class="accordion-btn">Revocable Living Trust</button>
+            <div class="accordion-content">
+                <button class="copy-btn">Copy</button>
+                <p>A Revocable Living Trust is a flexible estate planning tool that allows you to manage and distribute your assets according to your wishes 
+                    both during your lifetime and after you pass. By placing assets into this trust, you retain control over them while you’re alive and can make 
+                    adjustments as needed. One of the key benefits is that, upon your passing, your loved ones can inherit these assets without the delays or expenses 
+                    of probate court. This ensures a smoother, more private transfer of your estate, giving you peace of mind and making things easier for those you care about most.
+                </p>
+            </div>
+    
+            <button class="accordion-btn">Last Will and Testament</button>
+            <div class="accordion-content">
+                <button class="copy-btn">Copy</button>
+                <h4>Creating a Will only</h4>
+                <p>A Last Will and Testament is a crucial legal document that allows you to outline how your assets and personal belongings will be distributed 
+                    after your passing. In your will, you can specify who will inherit your property, name guardians for minor children, and appoint an executor 
+                    to carry out your wishes. While a will provides clear instructions for your estate, it must go through probate court, a legal process that ensures your directives are followed. 
+                    Having a well-crafted will helps protect your loved ones and ensures your legacy is passed on exactly as you intend.
+                </p><br>
+                <h4>Creating a Will with a Trust</h4>
+                <p>
+                    When creating a Last Will and Testament alongside a Revocable Living Trust, the will often includes what's called "pour-over" language. This ensures 
+                    that any assets not already placed into the trust during your lifetime will be transferred, or "poured over," into the trust upon your passing.
+                     Essentially, the will acts as a safety net to ensure that all your assets are eventually handled by the trust. Once in the trust, these assets will be distributed 
+                     according to the terms you've set, allowing for a more efficient transfer without the need for probate, and ensuring your wishes are carried out seamlessly.
+                </p>            
+            </div>
+
+            <button class="accordion-btn">Financial Power of Attorney</button>
+            <div class="accordion-content">
+                <button class="copy-btn">Copy</button>
+                <p>
+                    A Financial Power of Attorney (POA) is a critical document that allows you to appoint someone you trust, known as an agent or attorney-in-fact, to manage 
+                    your financial affairs if you become unable to do so yourself. This can include paying bills, managing investments, handling real estate transactions, or 
+                    accessing bank accounts. The purpose of a financial POA is to ensure that your finances are properly handled without disruption in the event of illness, incapacity, 
+                    or absence. By granting this authority, you can have peace of mind knowing that your chosen agent can step in to make decisions and manage your assets in your best interest, 
+                    protecting your financial well-being when you're unable to do so.
+                </p>
+            </div>
+
+            <button class="accordion-btn">Medical Healthcare Surrogate</button>
+            <div class="accordion-content">
+                <button class="copy-btn">Copy</button>
+                <p>
+                    A Medical Healthcare Surrogate Designation is an important legal document that allows you to appoint someone you trust to make medical decisions on your behalf 
+                    if you're unable to do so due to illness or incapacity. This person, known as your healthcare surrogate, will have the authority to consult with doctors, review 
+                    medical records, and make informed decisions about your care, including treatments, surgeries, or end-of-life choices, based on your wishes. Having a healthcare surrogate 
+                    designation in place ensures that your medical decisions are made by someone who understands your values and preferences, offering peace of mind for both you and your loved ones during critical times.
+                </p>
+            </div>
+
+            <button class="accordion-btn">HIPAA Authorization</button>
+            <div class="accordion-content">
+                <button class="copy-btn">Copy</button>
+                <p>
+                    A HIPAA Authorization is a legal document that allows you to grant specific individuals or entities access to your private medical information, which is typically protected under 
+                    the Health Insurance Portability and Accountability Act (HIPAA). By signing this authorization, you give permission for healthcare providers to share your medical records, diagnoses, 
+                    treatment details, and other health-related information with those you designate, such as family members or your healthcare surrogate. This document is essential in ensuring that your 
+                    trusted individuals can fully understand your medical situation and make informed decisions about your care if needed, without facing the privacy restrictions that HIPAA enforces. 
+                    It ensures seamless communication and access to vital information during important moments in your healthcare journey.
+                </p>
+            </div>
+
+            <button class="accordion-btn">Living Will/Advanced Directive</button>
+            <div class="accordion-content">
+                <button class="copy-btn">Copy</button>
+                <p>
+                    A Living Will, also known as an Advance Directive, is a vital legal document that outlines your preferences for medical treatment in case you are unable to communicate your wishes due 
+                    to a serious illness or incapacitation. It allows you to specify the types of life-sustaining treatments you do or do not want, such as resuscitation, ventilator support, or tube feeding. 
+                    This document ensures that your healthcare providers and loved ones are aware of your wishes regarding end-of-life care, allowing them to honor your decisions without uncertainty or guilt. 
+                    By having a living will in place, you take control of your future medical care and relieve your family from making difficult choices during an emotionally challenging time.
+                </p>
+            </div>
+
+            <button class="accordion-btn">Pet Trust</button>
+            <div class="accordion-content">
+                <button class="copy-btn">Copy</button>
+                <p>
+                    A Pet Trust is a specialized legal document that ensures your beloved pets are taken care of in the event of your death or incapacity. With a pet trust, you can set aside funds for your pets' 
+                    ongoing care and designate a trusted person or entity as the caretaker to manage these resources. By creating a pet trust, you can provide peace of mind knowing that your furry companions will 
+                    be well cared for, no matter what the future holds.
+                </p>
+            </div>
+
+            <button class="accordion-btn">Personal Property Memorandum</button>
+            <div class="accordion-content">
+                <button class="copy-btn">Copy</button>
+                <p>
+                    The Personal Property Memorandum is a legal document used in conjuction with your Will and Trust. The Personal Property Memorandum allows you to designate 
+                    how your tangible personal property (such as furniture, jewelry, collectibles, etc.) should be distributed after your death. This memorandum is 
+                    referred to in your Will or Trust, giving you the flexibility to specify particular items and their recipients without having to amend the entire will or trust document.
+                    This memorandum provides flexibility, as you can update it without needing to amend the more formal documents like your will or trust.
+
+                </p>           
+            </div>
+
+            <button class="accordion-btn">Assignment of Personal Property</button>
+            <div class="accordion-content">
+                <button class="copy-btn">Copy</button>
+                <p>
+                    The Assignment of Personal Property is designed to ensure that all of your tangible personal property (such as jewelry, clothing, household items, furniture, etc.) 
+                    is legally transferred into your Revocable Living Trust. This ensures that these items will be managed and distributed according to the terms of the trust, rather than going through probate.
+                    In essence, this document ensures that your personal property is properly funded into your trust, so it can be managed and distributed by the trustees after your death, avoiding probate.
+                </p>
+            </div>
+        </div>
+    
+        <div class="policies">
+            <h2>Policies</h2><hr>
+            <button class="accordion-btn">Security Policy</button>
+            <div class="accordion-content">
+                <button class="copy-btn">Copy</button>
+                <p>
+                    We are thrilled to share with our valued customers that we have achieved SOC 2 Type II certification, underscoring our commitment to the highest standards of security practices,
+                    rigorously audited by an independent third party to ensure our continued adherence over time.
+                </p><br>
+                <p>
+                    At the heart of our security measures is our serious approach to encryption: all stored data,
+                    including files, are shielded with AES256 encryption while at rest, ensuring the utmost
+                    protection. Passwords receive an added layer of defense, hashed using the PBKDF2 method,
+                    while data in transit is safeguarded by TLS 1.2 or 1.3 protocols, secured with a standard RSA
+                    2048bit certificate. Furthermore, our session and login tokens, boasting a 128-bit strength, are
+                    meticulously set to expire after one hour, significantly reducing the risk of unauthorized access.
+                </p><br>
+                <p>
+                    Our commitment extends to our infrastructure, with APIs securely hosted in the cloud for both
+                    reliability and security. Our proactive approach includes engaging a dedicated third-party team
+                    for penetration testing and SOC reviews, continuously enhancing our defenses against potential
+                    threats.
+                </p><br>
+                <p>
+                    In managing credit card information, we've partnered with Stripe, a leader in secure payment
+                    processing. Stripe securely stores all credit card details on their servers, while we tokenize this
+                    information, storing it as a link to ensure the highest level of care for this sensitive data.
+                </p><br>
+                <p>
+                    We hope this overview affirms our unwavering dedication to maintaining top-notch security
+                    practices. For the latest information on our security measures, we invite you to visit our website
+                    at <a href="https://www.netlaw.com/security">https://www.netlaw.com/security.</a> Should you have any questions or require further details, we
+                    encourage you to reach out to us directly.
+                </p>
+            </div>
+    
+            <button class="accordion-btn">Terms of Service</button>
+            <div class="accordion-content">
+                <button class="copy-btn">Copy</button>
+                <p>By using our services, you agree to abide by the outlined terms and conditions.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="../src/repository.js"></script>
+</body>
+</html>
