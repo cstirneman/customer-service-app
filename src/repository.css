@@ -176,7 +176,7 @@ hr {
 /* Responsive styles */
 
 /* Large screens - Desktops (min-width 1024px) */
-@media (min-width: 1100px) {
+@media (min-width: 1100px) and (max-width: 1400px){
     .grid-container {
         grid-template-columns: 1.5fr 3fr;
         grid-template-rows: 1fr 1fr;
@@ -195,6 +195,14 @@ hr {
     .products {
         grid-area: products;
         height: 72vh;
+    }
+
+    .products li{
+        font-size: 0.8rem;
+    }
+
+    .products p{
+        font-size: 0.8rem;
     }
 }
 
