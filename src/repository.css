@@ -73,19 +73,15 @@ hr {
 .products li {
     color: #0b112b;
     margin-left: 20px;
-    font-size: 1rem;
+    font-size: 1.2rem;
 }
 
 .products p {
-    font-size: 1rem;
+    font-size: 1.2rem;
 }
 
 .products h4 {
     margin-bottom: 1%;
-}
-
-.products li{
-    font-size: 0.9rem;
 }
 
 .package {
@@ -195,6 +191,10 @@ hr {
     .products {
         grid-area: products;
         height: 72vh;
+    }
+
+    .products h4{
+        font-size: 1rem;
     }
 
     .products li{
