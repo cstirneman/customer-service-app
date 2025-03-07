@@ -207,6 +207,10 @@ hr {
     }
 
     .advisor-codes #advisor-link{
+        font-size: 1.2rem;
+    }
+
+    .advisor-codes p{
         font-size: 1rem;
     }
 }
