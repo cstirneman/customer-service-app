@@ -46,6 +46,8 @@ function initializeEventListeners() {
 // Store the company codes in an object
 const advisorCodes = {
     "Affinity Wealth Concepts": "xdnhk",
+    "AIM Financials": "k5xed",
+    "C&S Insurance Group": "cgeed",
     "Elite Financial Group": "qshph",
     "EXP": "qw7am",
     "Experior": "8wch",
@@ -57,8 +59,11 @@ const advisorCodes = {
     "Independent": "4ldnz",
     "Jay Maymi": "o8n8o",
     "Jems Of Insurance": "ztc3h",
+    "MAF": "fpwrh",
     "Money Concepts": "ngwyf",
+    "NFI Solutions": "rl7hq",
     "Proxy Strategic Partners": "s5hbp",
+    "Rebecca Villafana": "alelw",
     "Rock Steady Financial Group": "ok9t6",
     "Synergy Financial Partners": "lgdgg",
     "TDR": "k9eem",
