@@ -45,6 +45,7 @@ function initializeEventListeners() {
 
 // Store the company codes in an object
 const advisorCodes = {
+    "3Mark": "dcr3y",
     "Affinity Wealth Concepts": "xdnhk",
     "AIM Financials": "k5xed",
     "C&S Insurance Group": "cgeed",
