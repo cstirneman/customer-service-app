@@ -51,7 +51,7 @@ const advisorCodes = {
     "C&S Insurance Group": "cgeed",
     "Elite Financial Group": "qshph",
     "EXP": "qw7am",
-    "Experior": "8wch",
+    "Experior": "8rwch",
     "Financial Advisor On Call": "qh5re",
     "FINLitCY": "wh83o",
     "Freedom Financial": "qcbwc",
