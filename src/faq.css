@@ -94,6 +94,11 @@ h2{
     background-color: #06d2dd;
 }
 
+.errorImg{
+    width: 50vw;
+    height: 50vh;
+}
+
 /* Media Queries for Responsiveness */
 
 /* Tablets (768px to 1024px) */
