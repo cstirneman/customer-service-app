@@ -21,6 +21,8 @@ body {
 
 .products {
     grid-area: products;
+    height: 80vh;
+    overflow-y: auto;
 }
 
 .advisor-codes {
@@ -192,6 +194,7 @@ hr {
     .products {
         grid-area: products;
         height: 72vh;
+        overflow-y: auto;
     }
 
     .products h4{
