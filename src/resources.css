@@ -65,6 +65,34 @@ h2 {
 
 .container button:hover {
     background-color: #06d2dd;
+    color: black;
+}
+
+.thumbnail {
+    height: 70px;
+    width: auto;
+    border-radius: 5px;
+    border: 1px solid #00000030;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    object-fit: cover;
+}
+
+
+/* New: group for View/Download and Visit/Copy buttons */
+.btn-group {
+    display: flex;
+    gap: 10px;
+}
+
+/* New: special styles for View and Visit buttons */
+.view-btn, .visit-btn {
+    background-color: #06d2dd;
+    color: black;
+}
+
+.view-btn:hover, .visit-btn:hover {
+    background-color: #0b112b;
+    color: white;
 }
 
 /* Responsive styles */
@@ -98,19 +126,23 @@ h2 {
 
     .flyer, .guide, .video {
         font-size: 0.9rem;
+        flex-wrap: wrap;
+        gap: 8px;
     }
 
     .flyer p, .guide p, .video p {
         margin-right: 10px;
     }
 
-    .container button {
-        width: 100%;
-        margin-top: 10px;
+    .btn-group {
+        margin-left: auto;
     }
 
-    .copy-link-btn{
-        width: 50%;
-        margin-left: 20px;
+    .container button {
+        padding: 6px 10px;
+    }
+
+    .copy-link-btn {
+        width: auto;
     }
 }
