@@ -1,3 +1,4 @@
+// Load the header content dynamically
 fetch('header.html')
     .then(response => response.text())
     .then(data => {
@@ -5,57 +6,69 @@ fetch('header.html')
 
         // After loading the header, load the header's JavaScript
         const script = document.createElement('script');
-        script.src = '../src/header.js'; // Assuming this is the path to your header.js
+        script.src = '../src/header.js'; 
+        script.defer = true; 
         document.body.appendChild(script);
+
+        // When header.js finishes loading, initialize page logic
+        script.onload = () => {
+            initializeFAQPage();
+        };
     })
     .catch(error => console.error('Error loading header:', error));
 
+
+// -------------------------------
+// Main FAQ initialization function
+// -------------------------------
+function initializeFAQPage() {
 
     const buttons = document.querySelectorAll('.response-btn');
 
     buttons.forEach(button => {
         button.addEventListener('click', () => {
             const content = button.nextElementSibling;
-    
-            // Check if it's already shown or not
+
+            // Toggle this response
             if (content.classList.contains('show')) {
                 content.classList.remove('show');
             } else {
-                // Close all other open responses if necessary
+                // Close other open responses
                 document.querySelectorAll('.response-content.show').forEach(openContent => {
                     openContent.classList.remove('show');
                 });
-    
-                // Show the clicked response
+
+                // Open this response
                 content.classList.add('show');
             }
         });
     });
-    
+
+
+    // Copy buttons
     document.querySelectorAll('.copy-btn').forEach(button => {
         button.addEventListener('click', () => {
-            // Get the content to copy (inside the 'response-inner' div)
+
             const contentToCopy = button.parentElement.querySelector('.response-inner').innerHTML;
-    
-            // Use the Clipboard API to copy HTML content
-            if (navigator.clipboard) {
+
+            // Use Clipboard API
+            if (navigator.clipboard && window.ClipboardItem) {
                 navigator.clipboard.write([
                     new ClipboardItem({
-                        "text/html": new Blob([contentToCopy], { type: "text/html" })
+                        'text/html': new Blob([contentToCopy], { type: 'text/html' })
                     })
-                ]).then(() => {
-                    alert('Content copied successfully!');
-                }).catch(err => {
-                    console.error('Failed to copy content: ', err);
+                ])
+                .then(() => {
+                    showToast('Response copied to clipboard');
+                })
+                .catch(err => {
+                    console.error('Failed to copy content:', err);
+                    showToast('Failed to copy content');
                 });
+
             } else {
-                // Fallback for older browsers
-                alert('Clipboard API not supported in this browser.');
+                showToast('Clipboard not supported in this browser');
             }
         });
     });
-    
-    
-    
-
-
+}

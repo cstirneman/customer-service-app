@@ -97,6 +97,265 @@ button:hover {
     flex-direction: row;
 }
 
+/* -----------------------------
+   GLOBAL TOAST NOTIFICATION
+------------------------------ */
+#copy-toast {
+    position: fixed;
+    left: 50%;
+    bottom: 40px;
+    transform: translateX(-50%) translateY(30px);
+    background-color: #0b112b; /* Navy */
+    color: #ffffff;
+    padding: 16px 28px;
+    border-radius: 999px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease-out, transform 0.25s ease-out;
+    z-index: 9999;
+}
+
+#copy-toast.toast--visible {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+
+/* ===========================
+   GLOBAL CLICK EFFECT BASE
+   =========================== */
+
+.click-effect-root {
+    position: fixed;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+}
+
+/* ===========================
+   1) SIMPLE RING RIPPLE
+   =========================== */
+
+.click-ripple {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #0b112b;
+    opacity: 0.7;
+    animation: click-ripple-animation 0.5s ease-out forwards;
+}
+
+@keyframes click-ripple-animation {
+    from {
+        transform: translate(-50%, -50%) scale(0.2);
+        opacity: 0.7;
+    }
+    to {
+        transform: translate(-50%, -50%) scale(2.5);
+        opacity: 0;
+    }
+}
+
+/* ===========================
+   2) GLOWING DOUBLE RIPPLE
+   =========================== */
+
+.click-glow-wrapper {
+    width: 50px;
+    height: 50px;
+}
+
+.click-glow-core,
+.click-glow-ring {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.click-glow-core {
+    width: 16px;
+    height: 16px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 10px #06d2dd;
+    animation: click-glow-core 0.45s ease-out forwards;
+}
+
+.click-glow-ring {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #0b112b;
+    box-shadow: 0 0 15px rgba(11, 17, 43, 0.6);
+    animation: click-glow-ring 0.45s ease-out forwards;
+}
+
+@keyframes click-glow-core {
+    from {
+        transform: translate(-50%, -50%) scale(0.6);
+        opacity: 1;
+    }
+    to {
+        transform: translate(-50%, -50%) scale(0.1);
+        opacity: 0;
+    }
+}
+
+@keyframes click-glow-ring {
+    from {
+        transform: translate(-50%, -50%) scale(0.5);
+        opacity: 0.9;
+    }
+    to {
+        transform: translate(-50%, -50%) scale(1.8);
+        opacity: 0;
+    }
+}
+
+/* ===========================
+   3) EXPLODING PARTICLES
+   =========================== */
+
+.click-particle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #0b112b;
+    box-shadow: 0 0 6px rgba(6, 210, 221, 0.6);
+    animation: click-particle-animation 0.5s ease-out forwards;
+    /* each particle will get custom --tx / --ty from JS */
+}
+
+@keyframes click-particle-animation {
+    from {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: translate(calc(-50% + var(--tx)), calc(-50% + var(--ty))) scale(0.2);
+        opacity: 0;
+    }
+}
+
+/* ===========================
+   4) STAR / MAGIC SPARKLE
+   =========================== */
+
+.click-star {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: radial-gradient(circle, #ffffff 0%, #0b112b 50%, transparent 70%);    transform: translate(-50%, -50%) rotate(0deg);
+    animation: click-star-animation 0.6s ease-out forwards;
+}
+
+@keyframes click-star-animation {
+    from {
+        transform: translate(-50%, -50%) scale(0.4) rotate(0deg);
+        opacity: 1;
+    }
+    to {
+        transform: translate(-50%, -50%) scale(1.8) rotate(180deg);
+        opacity: 0;
+    }
+}
+
+/* ===========================
+   5) IMPACT SHOCKWAVE
+   =========================== */
+
+.click-impact-ring {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 3px solid #0b112b;
+    box-shadow: 0 0 12px rgba(11, 17, 43, 0.6);
+    animation: click-impact-ring 0.45s ease-out forwards;
+}
+
+.click-impact-shadow {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid rgba(11, 17, 43, 0.4);
+    animation: click-impact-shadow 0.45s ease-out forwards;
+}
+
+@keyframes click-impact-ring {
+    from {
+        transform: translate(-50%, -50%) scale(0.4);
+        opacity: 1;
+    }
+    to {
+        transform: translate(-50%, -50%) scale(1.8);
+        opacity: 0;
+    }
+}
+
+@keyframes click-impact-shadow {
+    from {
+        transform: translate(-50%, -50%) scale(0.3);
+        opacity: 0.6;
+    }
+    to {
+        transform: translate(-50%, -50%) scale(2.2);
+        opacity: 0;
+    }
+}
+
+/* ===========================
+   6) BUBBLE POP
+   =========================== */
+
+.click-bubble {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: rgba(11, 17, 43, 0.8);
+    box-shadow: 0 0 10px rgba(11, 17, 43, 0.6);
+    animation: click-bubble-animation 0.5s ease-out forwards;
+}
+
+.click-bubble-dot {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #06d2dd; /* teal accent */
+    animation: click-bubble-dot 0.5s ease-out forwards;
+}
+
+@keyframes click-bubble-animation {
+    from {
+        transform: translate(-50%, -50%) scale(0.6);
+        opacity: 1;
+    }
+    to {
+        transform: translate(-50%, -50%) scale(1.4);
+        opacity: 0;
+    }
+}
+
+@keyframes click-bubble-dot {
+    from {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: translate(-50%, -50%) translate(8px, -8px) scale(0.2);
+        opacity: 0;
+    }
+}
+
+
+
 /* Tablet (1024px) */
 @media (max-width: 1024px) {
     header {
