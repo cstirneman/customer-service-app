@@ -41,7 +41,7 @@ body {
     grid-area: policies;
     height: auto; /* Allow Policies section to expand with content */
     max-height: 30vh; /* Set a reasonable initial height */
-    overflow: hidden; /* Hidden overflow to prevent initial expansion */
+    overflow-y: auto; 
     transition: max-height 0.3s ease; /* Smooth transition for expansion */
 }
 

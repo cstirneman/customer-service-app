@@ -4,6 +4,7 @@ body {
     padding: 0;
     font-family: 'Montserrat', sans-serif;
     background-color: rgb(100, 100, 100);
+    font-size: 16px;
 }
 
 h1 {
@@ -30,15 +31,32 @@ h1 {
     border: 2px solid #0b112b;
 }
 
+/* Limit height & add scrollbars inside these sections */
+.flyers-container,
+.advisor-guides-container {
+    max-height: 70vh;   /* tweak this number until it feels right */
+    overflow-y: auto;
+}
+
+
 /* include presentations-container here as well */
 .flyers-container img, .advisor-guides-container img, .presentations-container img, .videos-container img {
-    height: 5vh;
+    height: 15vh;
 }
 
 .flyers-container p, .advisor-guides-container p, .presentations-container p, .videos-container p {
     flex: 1;
-    margin-left: 1%;
+    margin-left: 2%;
+    margin-right: 2%;
     text-align: left;
+}
+
+.flyers-container,
+.advisor-guides-container {
+    max-height: 70vh;
+    overflow-y: auto;
+    scrollbar-width:thick;          /* Firefox */
+    scrollbar-color: #0b112b #dfdcdc;
 }
 
 .flyer, .guide, .video {
@@ -46,7 +64,7 @@ h1 {
     align-items: center;
     justify-content: space-between;
     margin: 10px 5%;
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 
 h2 {
@@ -77,7 +95,30 @@ h2 {
     border: 1px solid #00000030;
     box-shadow: 0 2px 4px rgba(0,0,0,0.2);
     object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
 }
+
+.thumbnail:hover {
+    transform: scale(1.35);   /* default zoom */
+    z-index: 10;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+/* Flyers: maybe a slightly bigger zoom */
+.flyers-container .thumbnail:hover {
+    transform: scale(1.8);      /* flyers zoom more */
+    z-index: 10;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.35);
+}
+
+.vertical-fix {
+    height: 15vh;        /* keep same height as the other guide thumbs */
+    aspect-ratio: 16 / 9;/* give it a landscape-shaped box */
+    object-fit: contain; /* show the whole vertical page inside that box */
+    background-color: #ffffff; /* optional: nice white background behind it */
+}
+
 
 /* New: group for View/Download and Visit/Copy buttons */
 .btn-group {
@@ -97,6 +138,32 @@ h2 {
 }
 
 /* Responsive styles */
+
+/* Big desktop screens */
+@media (min-width: 1440px) {
+    body {
+        font-size: 18px;
+    }
+
+    h1 {
+        font-size: 3.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .flyer,
+    .guide,
+    .video {
+        font-size: 1.5rem;
+    }
+
+    /* Slightly adjust columns so things don’t feel squished */
+    .container {
+        grid-template-columns: 1.4fr 1.6fr;
+    }
+}
 
 /* Tablets */
 @media (max-width: 1024px) {
